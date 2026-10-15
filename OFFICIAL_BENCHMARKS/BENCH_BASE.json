@@ -1,0 +1,460 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "OHANA_API",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\GOVERNMENT\\OHANA_API\\UPSTREAM_CLONE",
+    "git": {
+      "head": "e3ab28075a5fc2f2e15ce06403db5c1e785a7778",
+      "url": "https://github.com/codeforamerica/ohana-api",
+      "branch": "master",
+      "committed_at": "2022-05-27T14:53:52-04:00"
+    }
+  },
+  "metrics": {
+    "files_total": 732,
+    "source_files_scanned": 456,
+    "lines_of_code": 21684,
+    "languages": {
+      ".rb": 444,
+      ".haml": 119,
+      ".csv": 62,
+      "(none)": 40,
+      ".yml": 17,
+      ".js": 11,
+      ".shaper": 10,
+      ".md": 5,
+      ".scss": 4,
+      ".rake": 4,
+      ".html": 3,
+      ".txt": 2,
+      ".sh": 1,
+      ".example": 1,
+      ".png": 1
+    }
+  },
+  "licence": {
+    "spdx": "BSD-3-Clause",
+    "class": "A",
+    "source_file": "LICENSE.md",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 0,
+    "unique": 0,
+    "by_ecosystem": {},
+    "list": []
+  },
+  "owasp_top10": {
+    "total_findings": 49,
+    "files_with_findings": 46,
+    "severity": {
+      "high": 10,
+      "medium": 2,
+      "low": 37
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 2,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "app/controllers/api/v1/search_controller.rb",
+            "line": 41,
+            "cwe": "CWE-327",
+            "snippet": "Digest::MD5.hexdigest("
+          },
+          {
+            "severity": "medium",
+            "file": "config/initializers/new_framework_defaults_5_2.rb",
+            "line": 34,
+            "cwe": "CWE-327",
+            "snippet": "# Use SHA-1 instead of MD5 to generate non-sensitive digests, such as the ETag header."
+          }
+        ]
+      },
+      "A03-Injection": {
+        "count": 8,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/admin/accepted_payments.js",
+            "line": 1,
+            "cwe": "CWE-78",
+            "snippet": "$(document).ready(function() {"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/admin/categories_form.js",
+            "line": 24,
+            "cwe": "CWE-78",
+            "snippet": "$(curr).click(_linkClickedHandler)"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/admin/funding_sources.js",
+            "line": 1,
+            "cwe": "CWE-78",
+            "snippet": "$(document).ready(function() {"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/admin/languages.js",
+            "line": 1,
+            "cwe": "CWE-78",
+            "snippet": "$(document).ready(function() {"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/admin/org_autocomplete.js",
+            "line": 1,
+            "cwe": "CWE-78",
+            "snippet": "$(document).ready(function() {"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/admin/required_documents.js",
+            "line": 1,
+            "cwe": "CWE-78",
+            "snippet": "$(document).ready(function() {"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/admin/service_areas.js",
+            "line": 1,
+            "cwe": "CWE-78",
+            "snippet": "$(document).ready(function() {"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/admin/tags.js",
+            "line": 1,
+            "cwe": "CWE-78",
+            "snippet": "$(document).ready(function() {"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 0,
+        "findings": []
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "spec/api/cors_spec.rb",
+            "line": 24,
+            "cwe": "CWE-942",
+            "snippet": "expect(headers['Access-Control-Allow-Origin']).to eq('*')"
+          }
+        ]
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "spec/features/admin/sign_up_spec.rb",
+            "line": 87,
+            "cwe": "CWE-798",
+            "snippet": "to have_link 'resetting your password', href: 'http://example.com/admin/password/new'"
+          }
+        ]
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 37,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "app/controllers/application_controller.rb",
+            "line": 41,
+            "cwe": "CWE-319",
+            "snippet": "'documentation_url' => 'http://codeforamerica.github.io/ohana-api-docs/'"
+          },
+          {
+            "severity": "low",
+            "file": "app/controllers/api/v1/search_controller.rb",
+            "line": 14,
+            "cwe": "CWE-",
+            "snippet": "return unless stale?(etag: cache_key(locations), public: true)"
+          },
+          {
+            "severity": "low",
+            "file": "config/routes.rb",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "# Read more about routing: http://guides.rubyonrails.org/routing.html"
+          },
+          {
+            "severity": "low",
+            "file": "config/initializers/devise.rb",
+            "line": 58,
+            "cwe": "CWE-319",
+            "snippet": "#                  http://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Token.html"
+          },
+          {
+            "severity": "low",
+            "file": "config/initializers/friendly_id.rb",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "# http://norman.github.io/friendly_id/file.Guide.html"
+          },
+          {
+            "severity": "low",
+            "file": "spec/spec_helper.rb",
+            "line": 20,
+            "cwe": "CWE-319",
+            "snippet": "# See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration"
+          },
+          {
+            "severity": "low",
+            "file": "spec/api/cors_spec.rb",
+            "line": 11,
+            "cwe": "CWE-319",
+            "snippet": "'HTTP_ORIGIN' => 'http://cors.example.com',"
+          },
+          {
+            "severity": "low",
+            "file": "spec/api/get_organization_locations_spec.rb",
+            "line": 18,
+            "cwe": "CWE-319",
+            "snippet": "website: 'http://monfresh.com',"
+          },
+          {
+            "severity": "low",
+            "file": "spec/api/patch_organization_spec.rb",
+            "line": 87,
+            "cwe": "CWE-319",
+            "snippet": "to eq('http://codeforamerica.github.io/ohana-api-docs/')"
+          },
+          {
+            "severity": "low",
+            "file": "spec/api/patch_service_spec.rb",
+            "line": 34,
+            "cwe": "CWE-319",
+            "snippet": "website: 'http://www.monfresh.com',"
+          },
+          {
+            "severity": "low",
+            "file": "spec/api/search_spec.rb",
+            "line": 328,
+            "cwe": "CWE-319",
+            "snippet": "create(:location, website: 'http://www.smchsa.org')"
+          },
+          {
+            "severity": "low",
+            "file": "spec/controllers/api_applications_controller_spec.rb",
+            "line": 14,
+            "cwe": "CWE-319",
+            "snippet": "main_url: 'http://codeforamerica.org',"
+          },
+          {
+            "severity": "low",
+            "file": "spec/factories/api_applications.rb",
+            "line": 6,
+            "cwe": "CWE-319",
+            "snippet": "main_url { 'http://cfa.org' }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/factories/locations.rb",
+            "line": 21,
+            "cwe": "CWE-319",
+            "snippet": "website { 'http://samaritanhouse.com' }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/factories/organizations.rb",
+            "line": 41,
+            "cwe": "CWE-319",
+            "snippet": "website { ' http://cfa.org' }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/factories/services.rb",
+            "line": 28,
+            "cwe": "CWE-319",
+            "snippet": "website { ' http://www.monfresh.com ' }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/features/create_new_api_application_spec.rb",
+            "line": 27,
+            "cwe": "CWE-319",
+            "snippet": "create_api_app('my awesome app', 'http://codeforamerica.org', '')"
+          },
+          {
+            "severity": "low",
+            "file": "spec/features/signup_spec.rb",
+            "line": 46,
+            "cwe": "CWE-319",
+            "snippet": "expect(first_email.body).to include('http://codeforamerica.github.io/ohana-api-docs/')"
+          },
+          {
+            "severity": "low",
+            "file": "spec/features/update_api_application_spec.rb",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "update_api_app('my awesome app', 'http://cfa.org', 'http://cfa.org')"
+          },
+          {
+            "severity": "low",
+            "file": "spec/features/admin/sign_up_spec.rb",
+            "line": 82,
+            "cwe": "CWE-319",
+            "snippet": "to have_link 'sign up', href: 'http://example.com/admin/sign_up'"
+          },
+          {
+            "severity": "low",
+            "file": "spec/features/admin/csv/download_locations_csv_spec.rb",
+            "line": 30,
+            "cwe": "CWE-319",
+            "snippet": "'http://samaritanhouse.com', 'false'"
+          },
+          {
+            "severity": "low",
+            "file": "spec/features/admin/csv/download_organizations_csv_spec.rb",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "'501c3', 'http://cfa.org'"
+          },
+          {
+            "severity": "low",
+            "file": "spec/features/admin/csv/download_services_csv_spec.rb",
+            "line": 35,
+            "cwe": "CWE-319",
+            "snippet": "'active', '2 days', 'http://www.monfresh.com', '101, 102, 105'"
+          },
+          {
+            "severity": "low",
+            "file": "spec/features/admin/locations/create_location_spec.rb",
+            "line": 162,
+            "cwe": "CWE-319",
+            "snippet": "fill_in 'location_website', with: 'http://ruby.com'"
+          },
+          {
+            "severity": "low",
+            "file": "spec/features/admin/locations/update_website_spec.rb",
+            "line": 18,
+            "cwe": "CWE-319",
+            "snippet": "fill_in 'location_website', with: 'http://codeforamerica.org'"
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 1,
+    "files_with_findings": 1,
+    "severity": {
+      "high": 1,
+      "medium": 0,
+      "low": 0
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "db/seeds.rb",
+            "line": 16,
+            "cwe": "CWE-862",
+            "snippet": "user.skip_confirmation!"
+          }
+        ]
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:bc008d5a-ef6d-5021-8ada-52456ba286bb",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-05T15:58:51Z",
+      "component": {
+        "type": "application",
+        "name": "OHANA_API",
+        "version": "e3ab28075a5f",
+        "bom-ref": "pkg:generic/anticloud/OHANA_API@e3ab28075a5f",
+        "purl": "pkg:generic/anticloud/OHANA_API@e3ab28075a5f",
+        "licenses": [
+          {
+            "license": {
+              "id": "BSD-3-Clause"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "e3ab28075a5fc2f2e15ce06403db5c1e785a7778"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/codeforamerica/ohana-api"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": []
+  },
+  "elapsed_seconds": 295.21
+}
